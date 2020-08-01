@@ -1,0 +1,104 @@
+<ion-header >
+    <ion-toolbar color="default">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      Dashboard
+      <ion-buttons slot="end">
+        <ul class="header-icons"> 
+          <li>
+            <img src="../../../assets/icons/icAccountCircle.png">
+          </li>
+        
+          <li>
+            <img src="../../../assets/icons/icNotificationsNone.png">
+          </li>
+      
+          <li>
+            <img src="../../../assets/icons/icHelpOutline.png">
+          </li>
+        </ul>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-content padding-top>
+    <div class="dashboard-chart">
+        <h1 class="dashboard-chart__heading">Hello Priyanka!</h1>
+        <div style="display: block">
+          <canvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType"
+            (chartHover)="chartHovered($event)"
+            (backgroundColor)="doughnutChartBgColors"
+            (chartClick)="chartClicked($event)">
+          </canvas>
+          <button id="randomizeData">Ying Yue L1</button>
+          <button id="addDataset">Zhang Yue L2</button>
+          <button id="removeDataset">Li Yue L3</button>
+        </div>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="dashboard__heding">Whta’s coming next! </div>
+          <div class="dashboard__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card class="dashboard-card">
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="4">
+                    <div class="dashboard-card__avatar-icon"><img src="../../../assets/img/avatar-5.jpg"></div>
+                </ion-col>
+                <ion-col size="8">
+                    <div class="dashboard-card__h2">Ying Yue L1</div>
+                    <div class="dashboard-card__h1">A1. Famliy</div>
+                    <p class="dashboard-card__description">Lorem ipsum dolor sit amet. </p>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+          <a class="dashboard-card__session-link" href="#">All Session Assessment</a>
+        
+          <ion-card class="dashboard-card">
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="4">
+                  <div class="dashboard-card__avatar-icon"><img src="../../../assets/img/avatar-6.jpg"></div>
+                </ion-col>
+                <ion-col size="8">
+                  <div class="dashboard-card__h2">Ying Yue L2</div>
+                  <div class="dashboard-card__h1">A1. Famliy</div>
+                  <p class="dashboard-card__description">Lorem ipsum dolor sit amet. </p>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+          <a class="dashboard-card__session-link" href="#">All Session Assessment</a>
+
+          <ion-card class="dashboard-card">
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="4">
+                  <div class="dashboard-card__avatar-icon"><img src="../../../assets/img/avatar-7.jpg"></div>
+                </ion-col>
+                <ion-col size="8">
+                  <div class="dashboard-card__h2">Ying Yue L3</div>
+                  <div class="dashboard-card__h1">A1. Famliy</div>
+                  <p class="dashboard-card__description">Lorem ipsum dolor sit amet. </p>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+          <a class="dashboard-card__session-link" href="#">All Session Assessment</a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

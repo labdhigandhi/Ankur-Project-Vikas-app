@@ -1,0 +1,54 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color='primary' (click)="startApp()" [hidden]="!showSkip">Skip</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="false">
+    <ion-slide>
+      <h2 class="slide-title">
+        Hi! I’m Nano, here to help you use AI Tutor.
+        <b>ICA</b>
+      </h2>
+      <p>
+        My friends and I prepared a quick tour to help you get the most out of AI Tutor.
+      </p>
+      <img src="assets/img/ica-slidebox-img-1.png" class="slide-image" />
+    </ion-slide>
+
+    <ion-slide>
+     
+      <h2 class="slide-title">
+        Hi! I’m Nano, here to help you use AI Tutor.
+        <b>ICA</b>
+      </h2>
+      <p>
+        My friends and I prepared a quick tour to help you get the most out of AI Tutor.
+      </p>
+      <img src="assets/img/ica-slidebox-img-2.png" class="slide-image" />
+    </ion-slide>
+
+    <ion-slide>
+      <h2 class="slide-title">
+        Hi! I’m Nano, here to help you use AI Tutor.
+        <b>ICA</b>
+      </h2>
+      <p>
+        My friends and I prepared a quick tour to help you get the most out of AI Tutor.
+      </p>
+      <img src="assets/img/ica-slidebox-img-3.png" class="slide-image" />
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />
+      <h2 class="slide-title">Ready to Play?</h2>
+      <ion-button fill="clear" (click)="startApp()">
+        Continue
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

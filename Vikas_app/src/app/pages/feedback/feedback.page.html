@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    Feedback
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isFeedback == false&&feedback_list.length!=0">
+    <ion-list-header>
+     Your Feedbacks
+    </ion-list-header>
+
+  <ion-item *ngFor="let x of feedback_list;let index=index">
+    <ion-list>
+      <ion-label>
+          <h2>{{x.fName}} {{x.lName}}</h2>
+      </ion-label>
+
+      <ion-item>
+        {{x.feedback}}
+      </ion-item>
+    </ion-list>
+  </ion-item>
+  </div>
+  <div *ngIf="isFeedback==true">
+  <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+  <ion-list>  
+  
+  <ion-item>
+    <ion-label>Student</ion-label>
+    <ion-select [value]="['Alice Smith']" cancelText="Nah" okText="Okay!">
+      <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-label position="floating">Feedback<ion-text color="danger">*</ion-text></ion-label>
+    <ion-textarea required formControlName="feedback"></ion-textarea>
+  </ion-item>
+</ion-list>
+<div class="ion-padding">
+  <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!feedbackForm.valid">Submit Feedback</ion-button>
+</div>
+</form>
+</div>
+<ion-fab (click)="showHide()" vertical="bottom" horizontal="end" edge slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="{{iconstring}}"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>
+

@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    Raise Request
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isRaise == false&&raise_list.length!=0">
+    <ion-list-header>
+     Requests Raised
+    </ion-list-header>
+
+  <ion-item *ngFor="let x of raise_list;let index=index">
+    <ion-list>
+      <ion-label>
+          <h2>{{x.type}}</h2>
+      </ion-label>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <ion-item>
+              {{x.expenses}}
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item>
+              {{x.amount}}
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-item>
+        Request status : {{x.status}}
+      </ion-item>
+    </ion-list>
+  </ion-item>
+  </div>
+  <div *ngIf="isRaise==true">
+  <form [formGroup]="requestraiseForm" (ngSubmit)="onRaise()">
+  <ion-list>  
+  <ion-item>
+    <ion-label>Type</ion-label>
+    <ion-select value="competition" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="competition">Competition</ion-select-option>
+      <ion-select-option value="logistic">Logistic</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Students</ion-label>
+    <ion-select multiple="true" [value]="[]" cancelText="Nah" okText="Okay!">
+      <ion-select-option *ngFor="let user of users">{{user.first + ' ' + user.last}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-item lines="full">
+          <ion-label position="floating">Expenses<ion-text color="danger">*</ion-text></ion-label>
+          <ion-textarea required formControlName="expenses"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <ion-item lines="full">
+          <ion-label position="floating">Amount<ion-text color="danger">*</ion-text></ion-label>
+          <ion-input type="text" required formControlName="amount"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-list>
+<div class="ion-padding">
+  <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!requestraiseForm.valid">Raise Request</ion-button>
+</div>
+</form>
+</div>
+<ion-fab (click)="showHide()" vertical="bottom" horizontal="end" edge slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="{{iconstring}}"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

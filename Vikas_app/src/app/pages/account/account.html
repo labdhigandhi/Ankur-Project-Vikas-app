@@ -1,0 +1,196 @@
+<ion-content padding>   
+  <div *ngIf="condition == 'intro'">
+      <!--<h2 class="heading">Hi! I’m Nano, here to help you use AI Tutor.</h2>
+      <p class="subheading">My friends and I prepared a quick tour to help you get the most out of AI Tutor.</p>-->
+    
+      <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="true">
+        <ion-slide>
+          <img src="../../../assets/img/slider1.jpg" class="slide-image" />
+        </ion-slide>
+    
+        <ion-slide>
+          <img src="../../../assets/img/slider1.jpg" class="slide-image" />
+        </ion-slide>
+    
+        <ion-slide>
+          <img src="../../../assets/img/slider1.jpg" class="slide-image" />
+        </ion-slide>    
+      </ion-slides>
+    
+    
+      <ion-text class="ion-text-center">
+        <p class="periwinkle" (click)="route('login')">Log in with your email</p>
+      </ion-text>
+      
+      <!--<ion-item lines="none" class="languages">
+        <ion-label>English</ion-label>
+        <ion-select>
+          <ion-select-option value="English">English</ion-select-option>
+          <ion-select-option value="Chinese">Chinese</ion-select-option>
+        </ion-select>
+      </ion-item>-->
+  </div>
+
+ <div *ngIf="condition == 'login'">
+  <ion-row>
+    <ion-col>
+      <img height="250px" src="../../assets/img/logo.png">
+    </ion-col>
+  </ion-row>  
+    <h2 class="heading">LOGIN</h2>
+
+  <ion-input type="text" placeholder="Email"></ion-input>
+  <ion-input type="text" placeholder="Password"></ion-input>
+
+  <ion-text>
+    <p class="periwinkle" (click)="route('forgotpassword')">Forgot password?</p>
+  </ion-text>
+
+  <ion-button expand="block" class="login-btn" (click)="startApp()" color="transparent">LOGIN</ion-button>
+
+  <!--<ion-text>
+    <p class="periwinkle" (click)="route('resendactivation')">Re-send activation email › </p>
+  </ion-text>-->
+ </div>
+
+  <!--<div *ngIf="condition == 'onboarding'">
+      <h2 class="heading">INTRODUCTION & ONBORDING VIDEO  </h2>
+      <video text-center #player playsinline autoplay muted loop poster="assets/video/video-cover.jpg" id="bgvid">
+        <source src="../../../assets/video/background-480.mp4" type="video/mp4"> Your browser does not support the video tag.
+      </video>
+      <ion-text class="ion-text-center">
+        <p (click)="route('signup')">SKIP</p>
+      </ion-text>
+  </div>-->
+
+   <!-- Forgot Password -->
+   <div id="forgotpassword" *ngIf="condition == 'forgotpassword'">
+               
+      <h1 class="ion-padding ion-text-center">Reset password</h1>
+
+      <div>
+         <ion-item>
+             <p>Enter the email you used to sign up for your Square Panda account. We’ll email you a link to reset your password.</p>
+             <ion-input></ion-input>
+           </ion-item>
+         <ion-item class="ion-padding-top" lines="none">
+             <ion-input class="form-login-input block" type="email" placeholder="Email" required></ion-input>
+         </ion-item>
+         <div class="ion-text-center">
+             <a (click)="route('login')" class="login-links">Cancel</a>
+             <ion-button expand="block" class="login-btn" color="transparent" (click)="route('login')" >Log in</ion-button>
+             <a (click)="route('Privacy')" class="login-links">Privacy Policy</a>
+           </div>
+
+         </div>
+</div>
+<!-- End of Forgot Password -->
+
+
+<!-- Resend Activation Email 
+<div id="resendactivation" *ngIf="condition == 'resendactivation'">
+<h1 class="ion-padding ion-text-center header-text">Re-send activation email</h1>
+
+  <div>
+     <ion-item>
+         <p>Enter the email you used to sign up for your Square Panda account. We’ll email you a link to activate your account.</p>
+         <ion-input></ion-input>
+       </ion-item>
+     <ion-item class="ion-padding-top" lines="none">
+         <ion-input class="form-login-input block" type="email" placeholder="Email" required></ion-input>
+     </ion-item>
+     <div class="ion-text-center" padding>
+        <ion-button expand="block" class="login-btn" color="transparent" (click)="resendactivation()" >Submit</ion-button>
+         <a (click)="route('login')" class="login-links">Cancel</a>
+         <br /><br />
+         <a (click)="route('privacy')" class="login-links">Privacy Policy</a>
+       </div>
+
+</div>
+</div>
+End of Resend Activation Email -->
+
+<!--<div *ngIf="condition == 'signup'">
+    <h2 class="heading">PARENT DETAILS</h2>
+  <p class="subheading">We need just a bit of info to complete your account.</p>
+
+  <ion-input type="text" placeholder="*Firstname"></ion-input>
+  <ion-input type="text" placeholder="*Lastname"></ion-input>
+  
+  <ion-item class="country">
+    <ion-label>*Country</ion-label>
+    <ion-select>
+      <ion-select-option value="India">India</ion-select-option>
+      <ion-select-option value="China">China</ion-select-option>
+      <ion-select-option value="USA">USA</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-input type="number" placeholder="Phone Number">
+    <ion-label>+91</ion-label>
+    <ion-select no-padding>
+      <ion-select-option>+91</ion-select-option>
+      <ion-select-option>+1</ion-select-option>
+      <ion-select-option>+86</ion-select-option>
+    </ion-select>
+  </ion-input>
+
+  <ion-input type="text" placeholder="*6-digit code">
+    <span class="periwinkle">Text code again</span>
+  </ion-input>
+
+  <ion-input type="text" placeholder="*Relationship with child">
+  </ion-input>
+
+  <ion-button expand="block" (click)="route('addchild')" class="save-btn" color="transparent">SAVE</ion-button>  
+ </div>
+
+  <div *ngIf="condition == 'addchild'">
+      <h2 class="heading">ADD A CHILD</h2>
+      <p class="subheading">We need just a bit of info to complete your account.</p>
+    
+      <ion-input type="text" placeholder="Child's first name*"></ion-input>
+      <ion-input type="text" placeholder="Birthday* MM-DD-YYYY"></ion-input>
+    
+      <ion-item class="gender">
+        <ion-label>Gender</ion-label>
+        <ion-select>
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="Female">Female</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+      <ion-text>
+        <p>Upload or pick a personal avatar.</p>
+      </ion-text>  
+    
+      <ion-slides #slides [options]="sliderConfig">
+        <ion-slide>
+          <img src=".././../../assets/img/add-avatar.jpg">              
+        </ion-slide>
+    
+        <ion-slide>
+          <img src="../../../assets/img/avatar-1.jpg">        
+        </ion-slide>
+    
+        <ion-slide>
+          <img src="../../../assets/img/avatar-2.jpg">        
+        </ion-slide>
+    
+        <ion-slide>
+          <img src="../../../assets/img/avatar-3.jpg">        
+        </ion-slide>
+    
+        <ion-slide>
+          <img src="../../../assets/img/avatar-4.jpg">        
+        </ion-slide>
+      </ion-slides>
+    
+      <ion-button expand="block" class="save-btn" (click)="startApp()" color="transparent">SAVE</ion-button>
+    
+      <ion-text class="ion-text-center">
+        <p class="periwinkle">CANCEL</p>
+      </ion-text>
+  </div>
+
+</ion-content>-->

@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    Student Register
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div *ngIf="isRegister == false&&student_list.length!=0">
+    <ion-list-header>
+     Students
+    </ion-list-header>
+
+  <ion-item *ngFor="let x of student_list;let index=index">
+
+      <ion-label>
+          <h2>{{x.fName}} {{x.lName}}</h2>
+      </ion-label>
+
+  </ion-item>
+  </div>
+ <div *ngIf="isRegister==true">
+  <form [formGroup]="studentregisterForm" (ngSubmit)="onSubmit()">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="fName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="lName"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">DOB <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input type="text" required formControlName="DOB"></ion-input>
+      </ion-item>
+
+      <ion-grid>
+        <ion-label>Gender</ion-label>
+        <ion-radio-group value="male">
+        <ion-row>
+          <ion-col col-6>
+            <ion-item>
+              <ion-label>Male</ion-label>
+              <ion-radio slot="start" value="male" checked></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item>
+              <ion-label>Female</ion-label>
+              <ion-radio slot="start" value="female"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+      </ion-grid>
+      
+      <ion-item>
+        <ion-label position="floating">Current Programs</ion-label>
+        <ion-input formControlName="currPro"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Orphanage Name<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input type="text" required formControlName="oName"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="stacked">Participated Competitions and previous programs</ion-label>
+        <ion-textarea formControlName="comp"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!studentregisterForm.valid">Register Student</ion-button>
+    </div>
+  </form>
+ </div>
+ <ion-fab (click)="showHide()" vertical="bottom" horizontal="end" edge slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="{{iconstring}}"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>
+

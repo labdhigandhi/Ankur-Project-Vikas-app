@@ -1,0 +1,191 @@
+<ion-header >
+  <ion-toolbar color="transparent">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    Home
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <img style="width:24px; height:24px;vertical-align:middle" src="../../../assets/icons/icAccountCircle.png">
+      </ion-avatar>
+
+      <ion-avatar>
+        <img style="width:24px; height:24px" src="../../../assets/icons/icNotificationsNone.png">
+      </ion-avatar>
+
+      <ion-avatar>
+        <img style="width:24px; height:24px" src="../../../assets/icons/icHelpOutline.png">
+      </ion-avatar>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content padding-top>
+ 
+<!--<ion-card no-margin style="background:#F9A61A;color:#fff">
+  <ion-card-content>
+    <strong>E-Books</strong>
+    <p>Lorem ipsum dolor sit amet, lorem ipsum.</p> 
+    <p>For Parents to explore</p>
+  </ion-card-content>
+</ion-card>
+
+<ion-title padding-top>EXPLORE PRODUCTS</ion-title>
+<ion-slides #slides [options]="exploreProductsSlider">
+  <ion-slide>
+    <ion-thumbnail>
+        <img src="../../../assets/img/product-01.jpg">
+    </ion-thumbnail>
+  </ion-slide>
+  <ion-slide>
+    <ion-thumbnail>
+        <img src="../../../assets/img/product-02.jpg">
+    </ion-thumbnail>
+  </ion-slide>
+  <ion-slide>
+    <ion-thumbnail>
+        <img src="../../../assets/img/product-03.jpg">
+    </ion-thumbnail>
+  </ion-slide>
+  <ion-slide>
+    <ion-thumbnail>
+        <img src="../../../assets/img/product-04.jpg">
+    </ion-thumbnail>
+  </ion-slide>
+  <ion-slide>
+    <ion-thumbnail>
+        <img src="../../../assets/img/product-01.jpg">
+    </ion-thumbnail>
+  </ion-slide>
+  <ion-slide>
+    <ion-thumbnail>
+        <img src="../../../assets/img/product-02.jpg">
+    </ion-thumbnail>
+  </ion-slide>
+  <ion-slide>
+    <ion-thumbnail>
+        <img src="../../../assets/img/product-03.jpg">
+    </ion-thumbnail>
+  </ion-slide>
+</ion-slides>
+  
+<ion-title padding-top>SUBSCRIPTIONS</ion-title>
+<ion-slides #slides [options]="subscriptionSlider">
+  <ion-slide>
+    <ion-card>
+      <ion-card-content>
+        <ion-label>Plan 1</ion-label> 
+        <p>Lorem ipsum dolor sit amet, lorem ipsum.</p>
+        <p>For Parents to explore</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card>
+      <ion-card-content>
+        <ion-label>Plan 1</ion-label> 
+        <p>Lorem ipsum dolor sit amet, lorem ipsum.</p>
+        <p>For Parents to explore</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+</ion-slides>-->
+
+<ion-grid class="grid">
+  <ion-row>
+    <ion-col col-6 (click)="navigate(0)">
+      <div  style="background-color:#fff;border: 0px solid rgb(238, 237, 234);">
+        <ion-img style="width: 50px; height: 50px;text-align: center" src="assets/img/appicon.svg"></ion-img>
+        </div>
+      <p class="text-over-img">Register Student</p>
+    </ion-col>
+  
+    <ion-col col-6 (click)="navigate(1)">
+      <div  style="background-color:#fff;border: 0px solid rgb(238, 237, 234);">
+        <ion-img style="width: 50px; height: 50px;text-align: center" src="assets/img/avatar-1.jpg"></ion-img>
+        </div>
+      <p class="text-over-img">Self Attendance</p>
+    </ion-col>
+  
+  </ion-row>
+  <ion-row>
+    <ion-col col-6 (click)="navigate(2)">
+      <div  style="background-color:#fff;border: 0px solid rgb(238, 237, 234);">
+        <ion-img style="width: 50px; height: 50px;text-align: center" src="assets/img/avatar-2.jpg"></ion-img>
+      </div>
+      <p class="text-over-img">Student Attendance</p>
+    </ion-col>
+  
+    <ion-col col-6 (click)="navigate(3)">
+      <div  style="background-color:#fff;border: 0px solid rgb(238, 237, 234);">
+        <ion-img style="width: 50px; height: 50px;text-align: center" src="assets/img/avatar-3.jpg"></ion-img>
+      </div>
+      <p class="text-over-img">My Goal</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6 (click)="navigate(4)">
+      <div  style="background-color:#fff;border: 0px solid rgb(238, 237, 234);">
+        <ion-img style="width: 50px; height: 50px;text-align: center" src="assets/img/avatar-4.jpg"></ion-img>
+        </div>
+      <p class="text-over-img">Feedback</p>
+    </ion-col>
+  
+    <ion-col col-6 (click)="navigate(5)">
+      <div  style="background-color:#fff;border: 0px solid rgb(238, 237, 234);">
+        <ion-img style="width: 50px; height: 50px;text-align: center" src="assets/img/avatar-5.jpg"></ion-img>
+        </div>
+      <p class="text-over-img">Reports</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6 (click)="navigate(6)">
+      <div  style="background-color:#fff;border: 0px solid rgb(238, 237, 234);">
+        <ion-img style="width: 50px; height: 50px;text-align: center" src="assets/img/avatar-6.jpg"></ion-img>
+        </div>
+      <p class="text-over-img">Raise Request</p>
+    </ion-col>
+  
+    <ion-col col-6 (click)="navigate(7)">
+      <div  style="background-color:#fff;border: 0px solid rgb(238, 237, 234);">
+        <ion-img style="width: 50px; height: 50px;text-align: center" src="assets/img/avatar-7.jpg"></ion-img>
+        </div>
+      <p class="text-over-img">Training Diary</p>
+    </ion-col>
+  </ion-row>  
+  </ion-grid>
+
+<!-- Blogs Slider Start 
+<ion-title padding-top>BLOGS</ion-title>
+<ion-slides #slides [options]="blogSlider">
+  <ion-slide> 
+    <ion-card>
+      <ion-card-content>
+        <ion-label>Ai-Tutor </ion-label> 
+        <p>Lorem ipsum dolor sit amet, lorem ipsum.</p>
+        <p>For Parents to explore</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+  <ion-slide> 
+    <ion-card>
+      <ion-card-content>
+        <ion-label>Ai-Tutor 2 </ion-label> 
+        <p>Lorem ipsum dolor sit amet, lorem ipsum.</p>
+        <p>For Parents to explore</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+  <ion-slide> 
+    <ion-card>
+      <ion-card-content>
+        <ion-label>Ai-Tutor 3 </ion-label> 
+        <p>Lorem ipsum dolor sit amet, lorem ipsum.</p>
+        <p>For Parents to explore</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+ Blogs Slider End -->
+
+</ion-content>

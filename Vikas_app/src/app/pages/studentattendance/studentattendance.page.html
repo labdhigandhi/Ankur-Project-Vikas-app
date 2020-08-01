@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    Student Attendance
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Select Date</ion-label>
+    <ion-datetime value="2020-07-18" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+  <ion-button expand="block" (click)=markAttendance()>Mark Attendance</ion-button>
+  <ion-button expand="block" (click)=viewAttendance()>View Attendance</ion-button>
+
+  <ion-list *ngIf="student_list.length!=0">
+    <ion-list-header>
+        Students
+    </ion-list-header>
+
+    <ion-item *ngFor="let x of student_list;let index=index">
+      <ion-label>{{x.fName}} {{x.lName}}</ion-label>
+      <ion-checkbox slot="end"></ion-checkbox>
+    </ion-item>
+
+    <!--<ion-item *ngFor="let x of student_list;let index=index">
+
+        <ion-radio-group value="present">
+          <ion-list-header>
+            <ion-label><h2>{{x.fName}} {{x.lName}}</h2></ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Present</ion-label>
+            <ion-radio slot="start" color="success" value="present"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Absent</ion-label>
+            <ion-radio slot="start" color="danger" value="absent"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+    </ion-item>-->
+
+  </ion-list>
+
+</ion-content>
+

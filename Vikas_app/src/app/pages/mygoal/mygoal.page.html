@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    My Goal
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button (click)="getGoalList()">Refresh</ion-button>
+
+  <ion-item>
+      <ion-label position="stacked">Orphanage Name</ion-label>
+      <ion-input [(ngModel)]="orphanage_name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="stacked">My Goal</ion-label>
+      <ion-input [(ngModel)]="goal"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="stacked">Duration</ion-label>
+      <ion-input [(ngModel)]="duration"></ion-input>
+  </ion-item>
+  <div style="color:red" *ngIf="error_msg.length!=0">
+      {{error_msg}}
+  </div>
+  <div>
+      <ion-button (click)="add_update()">{{btn}}</ion-button>
+      <ion-button (click)="reset()">Reset</ion-button>
+  </div>
+
+  <ion-list *ngIf="goal_list.length!=0">
+      <ion-list-header>
+          Your Goals
+      </ion-list-header>
+
+      <ion-item *ngFor="let x of goal_list;let index=index">
+
+          <ion-label>
+              <h2>{{x.orphanage_name}}</h2>
+              <p>{{x.goal}}</p>
+              <p>{{x.duration}}</p>
+          </ion-label>
+
+          <ion-button (click)="edit(x,index)">
+              <ion-icon slot="icon-only" name="checkmark-circle"></ion-icon>
+          </ion-button>
+
+          <ion-button (click)="delete(index)" fill="outline" color="grey">
+              <ion-icon color="danger" slot="icon-only" name="close-circle"></ion-icon>
+          </ion-button>
+      </ion-item>
+
+  </ion-list>
+</ion-content>

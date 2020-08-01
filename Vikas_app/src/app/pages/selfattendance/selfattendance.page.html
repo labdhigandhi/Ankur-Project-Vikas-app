@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    Self Attendance
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="this.islocation==false" padding>
+  <ion-item>
+    <ion-label>
+      Today's Date {{this.RealDate}}
+    </ion-label>
+  </ion-item>
+
+  <!--<ion-item id="from" color="primary">
+    <ion-label color="light">From</ion-label>
+    <ion-datetime displayFormat="HH:mm" [(ngModel)]="from"></ion-datetime>
+  </ion-item>
+
+  <ion-item id="to" color="primary">
+    <ion-label color="light">To</ion-label>
+    <ion-datetime displayFormat="HH:mm" [(ngModel)]="to"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <button ion-button round *ngIf="this.from!=undefined && this.to!=undefined" (click)="presentOptions()">Mark my
+      Attedance</button>
+  </ion-item>-->
+
+  <ion-item>
+    <ion-button expand="block" (click)=presentOptions()>{{btn}}</ion-button>
+  </ion-item>
+
+  <ion-item *ngIf="this.isCheckOut==true">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label>Checked-Out</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label>{{dateNtime2 | date: 'dd/MM HH:mm:ss'}}</ion-label>
+            <button ion-button (click)="showlocation()">
+              <ion-icon class="product-card__arrow-forward" name="arrow-round-forward"></ion-icon>
+            </button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+   </ion-grid>
+  </ion-item>
+
+  <ion-item *ngIf="this.isCheckIn==true">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-item>
+          <ion-label>Checked-In</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <ion-item>
+          <ion-label>{{dateNtime1 | date: 'dd/MM HH:mm:ss'}}</ion-label>
+          <button ion-button (click)="showlocation()">
+            <ion-icon class="product-card__arrow-forward" name="arrow-round-forward"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+ </ion-grid>
+ </ion-item>
+
+  <ion-list *ngIf="selfattendance_list.length!=0">
+  <ion-list-header>
+    Previous Attendances
+  </ion-list-header>
+  <ion-item *ngFor="let x of selfattendance_list;let index=index">
+
+   <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label>{{x.date}}</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item>
+            <ion-label>{{x.time}}</ion-label>
+            <button ion-button (click)="showlocation()">
+              <ion-icon class="product-card__arrow-forward" name="arrow-round-forward"></ion-icon>
+            </button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+   </ion-grid>
+    
+
+  <!--<ion-label>
+      <h2>{{x.date}} {{x.from}}-{{x.to}}</h2>
+      <p>{{x.from}}</p>
+      <p>{{x.to}}</p>
+  </ion-label>-->
+
+  </ion-item>
+
+  </ion-list>
+</ion-content>
+<ion-content *ngIf="this.islocation==true" [fullscreen]="true">
+
+  <div class="map-wrapper">
+    <div id="map_center">
+      <img src="assets/icon/location-marker.png" />
+    </div>
+    <div #map id="map"></div>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <b>Lattitude</b>
+      </ion-col>
+      <ion-col>
+        {{latitude}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <b>Longitude</b>
+      </ion-col>
+      <ion-col>
+        {{longitude}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <b>Address</b>
+      </ion-col>
+      <ion-col>
+        {{address}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    Training Diary
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isNote == false&&note_list.length!=0">
+    <ion-list-header>
+     Diary Notes
+    </ion-list-header>
+
+  <ion-item *ngFor="let x of note_list;let index=index">
+    <ion-card class="product-card orange-bg">
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="9">
+          <ion-card-title class="product-card__title">
+            {{x.title}}
+          </ion-card-title>
+          <div class="product-card__description">{{x.note}}</div>
+          </ion-col>
+        <ion-col size="5" class="product-card__thumb">
+            <ion-button (click)="edit(x,index)">
+              <ion-icon slot="icon-only" name="checkmark-circle"></ion-icon>
+            </ion-button>
+
+            <ion-button (click)="delete(index)" fill="outline" color="grey">
+              <ion-icon color="danger" slot="icon-only" name="close-circle"></ion-icon>
+            </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  </ion-item>
+  </div>
+  <div *ngIf="isNote==true">
+  <ion-list>  
+    <ion-item lines="full">
+      <ion-label position="floating">Title</ion-label>
+      <ion-input type="text" [(ngModel)]="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Notes</ion-label>
+      <ion-textarea [(ngModel)]="note"></ion-textarea>
+    </ion-item>
+
+    <div style="color:red" *ngIf="error_msg.length!=0">
+      {{error_msg}}
+    </div>
+
+</ion-list>
+<div class="ion-padding">
+  <ion-button (click)="add_update()">{{btn}}</ion-button>
+</div>
+</div>
+<ion-fab (click)="showHide()" vertical="bottom" horizontal="end" edge slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="{{iconstring}}"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

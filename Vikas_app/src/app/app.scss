@@ -1,0 +1,202 @@
+.header-icons li {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.header-icons li img {
+    width: 24px;
+    height: 24px;
+}
+
+.page-title {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Dashboard start */
+
+.dashboard-chart {
+    background: #F7F3FF;
+    padding: 10px 0;
+}
+
+.dashboard-chart__heading {
+    font-size: 24px;
+    font-weight: 500;
+    color: #552F91;
+    text-align: center;
+}
+.dashboard__heding {
+    font-size: 16px;
+    font-weight: 500;
+    color: #552F91;
+    padding-top: 30px;
+}
+
+.dashboard-card__avatar-icon {
+    border-right: 1px solid #E5DFEF;
+    padding-right: 8px;
+    padding: 10px 10px;
+}
+
+.dashboard__description {
+    font-size: 14px;
+    color: #696969;
+}
+
+.dashboard-card {
+    margin-top: 20px;
+}
+
+.dashboard-card__h1{
+    font-size: 18px;
+    font-weight: 500;
+    color: #552F91;
+}
+
+.dashboard-card__h2{
+    font-size: 16px;
+    color: #696969;
+    font-weight: 400;
+}
+.dashboard-card__description{
+    font-size: 12px;
+    color: #aeaeae;
+}   
+
+.dashboard-card__session-link { 
+    font-size: 14px;
+    color: #9966ff;
+    margin-left: 20px;
+    text-decoration: none;
+}
+/* Dashboard end */
+
+/* Product start */
+.product-card {
+    position: relative;
+    color: #fff;  
+}
+.product-card__title {
+    font-size: 20px;
+    color: #fff;
+    padding-bottom: 5px;  
+}
+.product-card__description {
+    font-size: 14px;
+    height: 30px;
+    overflow: hidden;
+}
+.product-card__explore-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600; 
+}
+.product-card__arrow-forward{
+    vertical-align: middle;
+}
+.product-card__btn-more{
+    font-size: 28px;
+}
+.product-card__thumb{
+    display: flex;
+    align-self: flex-end;
+}
+
+
+/* Product end */
+
+
+/* Subscription Start */
+.subscriptions-card{
+    position: relative;
+    color: #fff; 
+}
+
+.subscriptions-card__title{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+.subscriptions-card__more-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600; 
+}
+.subscriptions-card__arrow-forward{
+    vertical-align: text-bottom;
+}
+
+
+.subscriptions-card__price{
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+}
+.subscriptions-card__thumb{
+    margin-top: 10px;
+}
+/* Subscription End */
+
+
+/* Home Work Start */
+.homework-card {
+    padding: 0;
+}
+.homework-card__title {
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+.homework-card__icon {
+    vertical-align: top;
+    color: #3EBC96;
+    font-size: 24px;
+}
+.homework-card__description {
+    font-size: 14px;
+    color: #696969;
+}
+.progress {
+    margin-top: 10px;
+}
+.progress__bar {
+    position: relative;
+    background: #aeaeae;
+    border-radius: 10px;
+    height: 5px;
+    width: 100%;
+}
+.progress__label {
+    font-size: 12px;
+}
+.progress__range {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    border-radius: 10px;
+}
+/* Home Work End */
+
+.orange-bg {
+    background: #f9a71a;
+}
+.green-bg {
+    background: #3EBC96;
+}
+.blue-bg {
+    background: #439ADC;
+}
+.red-bg {
+    background: #EE486F;
+}
